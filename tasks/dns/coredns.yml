@@ -46,7 +46,7 @@
 
 - name: dns | coredns | manage custom hosts file
   ansible.builtin.template:
-    src: "{{ vyos_coredns['corefile_template'] | default('config/dns/hosts.j2') }}"
+    src: "{{ vyos_coredns['hosts_template'] | default('config/dns/hosts.j2') }}"
     dest: "{{ vyos_coredns['config_path'] }}/hosts"
     owner: root
     group: vyattacfg
